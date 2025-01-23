@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>{{srn}} Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Add a New Product</h1>
+        <form id="product_form" action="/product" method="POST" class="space-y-4">
+            <div>
+                <label for="product_name" class="block text-gray-700 font-medium mb-1">Name</label>
+                <input 
+                    type="text" 
+                    name="product_name" 
+                    id="product_name" 
+                    required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                >
+            </div>
+            <div>
+                <label for="product_cost" class="block text-gray-700 font-medium mb-1">Price</label>
+                <input 
+                    type="text" 
+                    name="product_cost" 
+                    id="product_cost" 
+                    required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                >
+            </div>
+            <div>
+                <label for="product_quantity" class="block text-gray-700 font-medium mb-1">Quantity</label>
+                <input 
+                    type="text" 
+                    name="product_quantity" 
+                    id="product_quantity" 
+                    required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                >
+            </div>
+            <div>
+                <label for="product_description" class="block text-gray-700 font-medium mb-1">Description</label>
+                <textarea 
+                    name="product_description" 
+                    id="product_description" 
+                    required 
+                    rows="4" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                ></textarea>
+            </div>
+            <div class="text-center">
+                <input 
+                    type="submit" 
+                    value="Submit" 
+                    class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                >
+            </div>
+        </form>
+    </div>
+</body>
+</html>

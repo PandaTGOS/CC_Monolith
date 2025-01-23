@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>{{srn}} Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-6 bg-white rounded-lg shadow-lg text-center">
+        <p class="text-lg font-semibold mb-4">
+            Total = <b class="text-xl text-green-600">{{ total }}</b>
+        </p>
+        <form action="{{ url_for('payment') }}?total={{ total }}" method="get">
+            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                Pay
+            </button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>{{srn}} Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-6 text-center">Cart</h1>
+        <table id="cart_table" class="table-auto w-full border-collapse border border-gray-200 text-left">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border border-gray-300 px-4 py-2">Product</th>
+                    <th class="border border-gray-300 px-4 py-2">Price</th>
+                    <th class="border border-gray-300 px-4 py-2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                    <tr class="hover:bg-gray-100">
+                        <td class="border border-gray-300 px-4 py-2">{{ item.name }}</td>
+                        <td class="border border-gray-300 px-4 py-2">{{ item.cost }}</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <form action="/cart/remove/{{item.id}}" method="post">
+                                <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="flex justify-between mt-6">
+            <a href="/checkout" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Checkout</a>
+            <a href="/cart/delete" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Clear Cart</a>
+            <a href="/cart" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Refresh</a>
+            <a href="/browse" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Back to Products</a>
+        </div>
+    </div>
+</body>
+</html>
